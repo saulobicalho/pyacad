@@ -17,3 +17,12 @@ not properly understood which code should be used on the urls.py of website app.
 path('funcionarios/<int:ano>/', views.funcionarios_por_ano)  --> where do this code should enter on the project? Should it be inside the square brackets
 of url patterns, on website>urls.py ?
 At this moment, it is being tested to use it at this place (mentioned above)
+
+Now that urls.py redirects requests to view.py, it is necessary to write it. In this case, urls.py will route requests to view.index and view.funcionarios_por_ano
+The course says that are 2 ways to treat these requests, by function, or by views.
+By functions means adopt a strategy that will receive requests as parameters, and return a result
+Probably, thats the way done at try-django repo, where f. as homepage(), etc, receive request as parameters. In those case, those f return  the result of a render
+f. application.
+Otherwise, strategy using views uses inheritance of classes from an ancestor view class on django. These classes, according to text, allow some advantages to
+devs. The example for view using is considering the purpose of showing a screen with list of all workers.
+First way exemplified on text is the f. way, and it uses query just as used previously on py shell (but no necessity of importing line)
