@@ -1,0 +1,2 @@
+https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-introducao ok
+https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-model
