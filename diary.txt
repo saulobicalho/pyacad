@@ -1,2 +1,3 @@
 https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-introducao ok
-https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-model
+https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-model obs: after inserting data test (Marcos) on shell, it isn't returning the
+desired entry (it says Funcionario isnt defined)
