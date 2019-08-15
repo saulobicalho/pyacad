@@ -1,3 +1,19 @@
 https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-introducao ok
 https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-model obs: after inserting data test (Marcos) on shell, it isn't returning the
-desired entry (it says Funcionario isnt defined)
+desired entry (it says Funcionario isnt defined) -->problem solved. When doing the query on shell, as described at the example, it is still necessary to
+provide the first line as that one of the funcionario creation (from pyacad.models import Funcionario)
+
+This is the correct query, on py shell:
+
+from pyacad.models import Funcionario
+
+query
+
+OBS: if its a query that make some alteration on the model, its necessary to do a .save(), at the end
+
+https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-view it is still a little difficult to apply the use of 2 urls.py files. It is
+not properly understood which code should be used on the urls.py of website app.
+
+path('funcionarios/<int:ano>/', views.funcionarios_por_ano)  --> where do this code should enter on the project? Should it be inside the square brackets
+of url patterns, on website>urls.py ?
+At this moment, it is being tested to use it at this place (mentioned above)
