@@ -26,3 +26,34 @@ f. application.
 Otherwise, strategy using views uses inheritance of classes from an ancestor view class on django. These classes, according to text, allow some advantages to
 devs. The example for view using is considering the purpose of showing a screen with list of all workers.
 First way exemplified on text is the f. way, and it uses query just as used previously on py shell (but no necessity of importing line)
+Interesting to note the concept of "context", that is, the set of data that will be at a template (.html file, for example)
+Problems happened when running server, says that "path" is not specific word, so imported path from django.urls. Error now says invalid syntax for "path"
+-----------
+Still not working, trying to study: https://docs.djangoproject.com/pt-br/2.2/topics/http/urls/
+This article says that is needed to create URLconf. It is different from instructions below:
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+this text is basic instructions from url.py that comes w/ django. It gives the impression that including urlconf is an alternative step. So, is a required
+step? How to do it?
+Accoding to text, httprequest objects may have an attribute urlconf that is different from that specified at settings.py (which is ROOT_URLCONF). Otherwise,
+this module (the root one) will be the valid one.
+So urlconf are modules that are loaded by python, when theres a request.
+After loading the urlconf module, django will use url patterns. urlpatterns is a variable that django looks for, and must be specified as a path or repath type.
+So this explains why url() was not executing properly, it probably is deprecated. --> Its an alias to re_path, that leads w/ regex, will be dprecated soon. Use re_path instead.
+So django traverses the path instances, w/ url names, trying a pattern matching to this url.
+A match will determine the import and call of a certain view. So views are imported and called just when they correspond to the desired url.
+If the match occurs, so the correspondent view receive as parameter the request.
+The url can provide a name group so it is passed to the view.
+Please note path can use angle brackets to specify values
+More on how URL works on https://docs.djangoproject.com/pt-br/2.2/ref/urls/
