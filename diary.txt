@@ -57,3 +57,8 @@ If the match occurs, so the correspondent view receive as parameter the request.
 The url can provide a name group so it is passed to the view.
 Please note path can use angle brackets to specify values
 More on how URL works on https://docs.djangoproject.com/pt-br/2.2/ref/urls/
+
+test: 127...(localhost)
+status: error on view.py - not recognizing Funcionario.
+Obs: from program that shows db is ok (it computes alterations done on db). The program is DB Browser for SQLite
+Studying template: https://pythonacademy.com.br/blog/desenvolvimento-web-com-python-e-django-template
