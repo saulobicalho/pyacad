@@ -1,18 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from pyacad.models import Funcionario
+from django.views.generic.base import TemplateView
 
-def lista_funcionarios(request):
-    # Primeiro, buscamos os funcionarios
-    funcionarios = Funcionario.objetos.all()
-
-    # Incluímos no contexto
-    contexto = {
-      'funcionarios': funcionarios
-    }
-
-    # Retornamos o template no qual os funcionários serão dispostos
-    return render(request, "templates/funcionarios.html", contexto)
+class IndexTemplateView(TemplateView):
+  template_name = "index.html"
 
 
-""" python manage.py runserver"""
+"""python manage.py runserver"""
