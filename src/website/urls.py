@@ -7,5 +7,5 @@ app_name = 'website'
 # urlpatterns a lista de roteamentos de URLs para funções/Views
 urlpatterns = [
     # GET /
-    path('funcionarios/<int:ano>/', views.ListaFuncionarios),
+    path('', views.lista_funcionarios),
 ]

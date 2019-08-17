@@ -1,7 +1,18 @@
-from django.views.generic import ListView
+from django.http import HttpResponse
+from django.shortcuts import render
 from pyacad.models import Funcionario
 
-class ListaFuncionarios(ListView):
-    template_name = "templates/funcionarios.html"
-    model = Funcionario
-    context_object_name = "funcionarios"
+def lista_funcionarios(request):
+    # Primeiro, buscamos os funcionarios
+    funcionarios = Funcionario.objetos.all()
+
+    # Incluímos no contexto
+    contexto = {
+      'funcionarios': funcionarios
+    }
+
+    # Retornamos o template no qual os funcionários serão dispostos
+    return render(request, "templates/funcionarios.html", contexto)
+
+
+""" python manage.py runserver"""
