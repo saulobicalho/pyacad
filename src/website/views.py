@@ -1,14 +1,6 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
-def lista_funcionarios(request):
-    # Primeiro, buscamos os funcionarios
-    funcionarios = Funcionario.objetos.all()
-
-    # Incluímos no contexto
-    contexto = {
-      'funcionarios': funcionarios
-    }
-
-    # Retornamos o template no qual os funcionários serão dispostos
-    return render(request, "funcionarios.html", contexto)
+class ListaFuncionarios(ListView):
+    template_name = "templates/funcionarios.html"
+    model = Funcionario
+    context_object_name = "funcionarios"
