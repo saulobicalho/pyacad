@@ -1,2 +1,2 @@
 # pyacad
-pythonacademy course django
+versão parcial com erro
